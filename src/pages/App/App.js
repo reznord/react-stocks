@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './styles/App.css';
-import Row from '../../components/Row';
+import Table from '../../components/Table';
 
 let object = {};
 let socket;
@@ -49,7 +49,7 @@ class App extends Component {
     let _data = JSON.parse(eventData)
     this.setState({
       data: this.serialize(_data)
-    }, () => console.log(this.state.data))
+    })
   }
 
   // helper function for formatting the data in required format
@@ -79,23 +79,7 @@ class App extends Component {
           Media.net's live stocks
         </div>
         <div className='AppContent'>
-          <table>
-            <thead>
-              <tr>
-                <th>Ticker</th>
-                <th>Price</th>
-                <th>Graph</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.data.map((item, index) => {
-                console.log(item)
-                return (
-                  <Row key={index} data={item} />
-                );
-              })}
-            </tbody>
-          </table>
+          <Table data={this.state.data} />
         </div>
       </div>
     );
