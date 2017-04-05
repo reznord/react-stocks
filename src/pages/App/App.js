@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import WebSocket from 'ws';
 
 import './styles/App.css';
 import Row from '../../components/Row';
@@ -20,19 +19,8 @@ class App extends Component {
 
   componentDidMount() {
     // open socket connection
-
-    socket.on('open', function open() {
-      console.log('connection established');
-    });
-
-    // socket.addEventListener('open', function (event) {
-    //     console.log('connection established');
-    // });
-
-    socket.on('message', function incoming(data, flags) {
-      console.log(data, flags);
-      // flags.binary will be set if a binary data is received.
-      // flags.masked will be set if the data was masked.
+    socket.addEventListener('open', function (event) {
+        console.log('connection established');
     });
 
     // Listen for messages

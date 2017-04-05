@@ -4,13 +4,10 @@
   "private": true,
   "homepage": "https://reznord.github.io/react-stocks",
   "dependencies": {
-    "bufferutil": "^3.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "3.0.2",
-    "react-sparklines": "^1.6.0",
-    "utf-8-validate": "^3.0.1",
-    "ws": "^2.2.3"
+    "react-sparklines": "^1.6.0"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",
